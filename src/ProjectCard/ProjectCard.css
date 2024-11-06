@@ -1,0 +1,183 @@
+/* ProjectCard.css */
+
+.project-card {
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 15px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card-content {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0.6em 0;
+  color: #333333;
+}
+
+.technologies-title {
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #666666;
+  margin-top: 10px;
+}
+
+.technologies-list {
+  font-size: 0.9em;
+  color: #777777;
+  margin: 0.5em 0 1em 0;
+}
+
+.project-card-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 1em;
+}
+
+.source-code-button, .project-detail-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.9em;
+  cursor: pointer;
+  flex: 1;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.source-code-button:hover, .project-detail-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.source-code-button:active, .project-detail-button:active {
+  transform: scale(0.98);
+}
+
+
+
+
+/* Only show project description when the card is expanded */
+.project-description {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  color: #333333;
+  font-size: 0.9em;
+  line-height: 1.5;
+  text-align: left;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 0; /* Initially collapsed */
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* Apply styles only to expanded cards */
+.project-card.expanded .project-description {
+  max-height: 500px; /* Adjust based on your content */
+  opacity: 1;
+}
+
+
+
+/* Optional: Add an animation for the detail toggle */
+.project-description-enter {
+  opacity: 0;
+  max-height: 0;
+}
+
+.project-description-enter-active {
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Media Queries */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .project-card {
+    width: 280px;
+  }
+}
+
+/* Tablets in portrait mode */
+@media (max-width: 768px) {
+  .project-card {
+    width: 220px;
+  }
+
+  .project-card-image {
+    height: 160px;
+  }
+
+  .project-card-content {
+    padding: 16px;
+  }
+
+  .project-title {
+    font-size: 1.2em;
+  }
+
+  .technologies-title, .technologies-list {
+    font-size: 0.85em;
+  }
+
+  .source-code-button, .project-detail-button {
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .project-card {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .project-card-image {
+    height: 140px;
+  }
+
+  .project-card-content {
+    padding: 12px;
+  }
+
+  .project-title {
+    font-size: 1.1em;
+  }
+
+  .technologies-title, .technologies-list {
+    font-size: 0.8em;
+  }
+
+  .source-code-button, .project-detail-button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}
