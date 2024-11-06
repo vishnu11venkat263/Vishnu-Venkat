@@ -49,9 +49,9 @@ const skillsData = {
   ];
 
   const languages = [
-    { name: "Tamil", level: "Fluent", icon: "🇫🇷" },
+    { name: "Tamil", level: "Fluent", icon: "🇮🇳" },
     { name: "English", level: "Good level", icon: "🇬🇧" },
-    { name: "German", level: "Intermediate", icon: "🇬🇧" }
+    { name: "German", level: "Intermediate", icon: "🇩🇪" }
   ];
 
   const interests = [
